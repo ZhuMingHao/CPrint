@@ -16,12 +16,17 @@
     </Page.BottomAppBar>
 
     <Grid x:Name="PrintArea" Background="White">
-        <TextBlock
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontFamily="Courier New"
-            FontSize="12"
-            Foreground="Black"
-            Text="Welcome Printed World!" />
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="995" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition  Width="50"/>
+
+        </Grid.ColumnDefinitions>
+
+        <WebView Grid.Column="0" x:Name="MyWebView" Source="http://www.stackoverflow.com" HorizontalAlignment="Right" />
+        <Rectangle Grid.Column="1" x:Name="MyWebViewRectangle" Fill="Red" />
+        <Button Grid.Column="2" Content="Print"  HorizontalAlignment="Center"/>
+
     </Grid>
 </Page>
